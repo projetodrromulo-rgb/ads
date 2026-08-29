@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { heroData } from "./data";
+import doctorImage from "../../assets/dr-romulo.png";
 ---
 
 <!-- HERO SECTION -->
@@ -9,9 +11,13 @@ import { heroData } from "./data";
   <!-- Tera Style Animated Grid Background -->
   <div class="absolute inset-0 z-0 bg-[#112A3D] overflow-hidden">
     <!-- Doctor Portrait Image -->
-    <img
-      src={heroData.doctorImage}
+    <Image
+      src={doctorImage}
       alt={heroData.doctorName}
+      width={593}
+      height={792}
+      loading="eager"
+      fetchpriority="high"
       class="absolute bottom-0 right-0 md:right-[5%] lg:right-[8%] h-[55%] md:h-[88%] w-auto object-contain z-10 opacity-30 md:opacity-100 transition-all duration-300 pointer-events-none"
     />
     <!-- Gradients to blend background and protect text -->
@@ -41,8 +47,21 @@ import { heroData } from "./data";
       preserveAspectRatio="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <defs>
+        <linearGradient id="ekg-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="black" />
+          <stop offset="42%" stop-color="black" />
+          <stop offset="50%" stop-color="white" />
+          <stop offset="58%" stop-color="black" />
+          <stop offset="100%" stop-color="black" />
+        </linearGradient>
+        <mask id="ekg-mask-1" maskUnits="userSpaceOnUse">
+          <rect class="ekg-sweep ekg-sweep-1" x="-1440" y="0" width="1440" height="80" fill="url(#ekg-grad-1)" />
+        </mask>
+      </defs>
       <polyline
-        class="ekg-line"
+        mask="url(#ekg-mask-1)"
+        class="ekg-line-base"
         fill="none"
         stroke="rgba(56,189,248,0.85)"
         stroke-width="1.8"
@@ -57,8 +76,21 @@ import { heroData } from "./data";
       preserveAspectRatio="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <defs>
+        <linearGradient id="ekg-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="black" />
+          <stop offset="42%" stop-color="black" />
+          <stop offset="50%" stop-color="white" />
+          <stop offset="58%" stop-color="black" />
+          <stop offset="100%" stop-color="black" />
+        </linearGradient>
+        <mask id="ekg-mask-2" maskUnits="userSpaceOnUse">
+          <rect class="ekg-sweep ekg-sweep-2" x="-1440" y="0" width="1440" height="60" fill="url(#ekg-grad-2)" />
+        </mask>
+      </defs>
       <polyline
-        class="ekg-line ekg-line-2"
+        mask="url(#ekg-mask-2)"
+        class="ekg-line-base ekg-line-2-glow"
         fill="none"
         stroke="rgba(56,189,248,0.45)"
         stroke-width="1.2"
@@ -73,8 +105,21 @@ import { heroData } from "./data";
       preserveAspectRatio="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <defs>
+        <linearGradient id="ekg-grad-3" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="black" />
+          <stop offset="42%" stop-color="black" />
+          <stop offset="50%" stop-color="white" />
+          <stop offset="58%" stop-color="black" />
+          <stop offset="100%" stop-color="black" />
+        </linearGradient>
+        <mask id="ekg-mask-3" maskUnits="userSpaceOnUse">
+          <rect class="ekg-sweep ekg-sweep-3" x="-1440" y="0" width="1440" height="50" fill="url(#ekg-grad-3)" />
+        </mask>
+      </defs>
       <polyline
-        class="ekg-line ekg-line-3"
+        mask="url(#ekg-mask-3)"
+        class="ekg-line-base ekg-line-3-glow"
         fill="none"
         stroke="rgba(56,189,248,0.35)"
         stroke-width="1.0"
