@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero/Hero.astro";
+import cirurgiaImage from "../assets/cirurgia.jpg";
 ---
 
 <Layout
@@ -182,9 +184,9 @@ import Hero from "../components/Hero/Hero.astro";
     class="relative h-64 md:h-96 overflow-hidden flex items-center justify-center"
   >
     <div class="absolute inset-0 bg-[#070F19]">
-      <img
-        src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2000&auto=format&fit=crop"
-        alt="Coluna Vertebral"
+      <Image
+        src={cirurgiaImage}
+        alt="Tecnologia e Precisão Cirúrgica"
         class="w-full h-full object-cover opacity-20"
       />
     </div>
